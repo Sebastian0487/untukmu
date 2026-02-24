@@ -9,10 +9,41 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("playBtn");
+  const music = document.getElementById("bgMusic");
+
+  btn.addEventListener("click", function() {
+    if (music.paused) {
+      music.play();
+      btn.textContent = "❚❚";
+      document.querySelector(".music-card").classList.add("playing");
+    } else {
+      music.pause();
+      btn.textContent = "▶";
+      document.querySelector(".music-card").classList.remove("playing");
+    }
+  });
+});
+</script>
 <body>
 
   <!-- SECTION 1 HERO -->
   <section class="hero">
+    <div class="music-card">
+  <div class="music-left">
+    <div class="play-btn" id="playBtn">
+      ▶
+    </div>
+  </div>
+
+  <div class="music-info">
+    <p class="song-title">Perunggu – 33x</p>
+  </div>
+
+  <audio id="bgMusic" src="assets/perunggu-33x.mp3"></audio>
+</div>
     <img src="assets/hero.jpg" class="hero-img">
     <div class="hero-overlay">
       <h1>Selamat Ulang Tahun</h1>
@@ -30,41 +61,27 @@
    <p>
 Hallo enaa, nggak kerasa sekarang udah tanggal 25 Februari lagi.
 Tepat di tanggal ini berarti kamu sudah masuk usia 23 tahun yaa.
-Makin tueee kamu yaa wkwkw.
-</p>
-
-<p>
-Doa dari aku, semoga dengan bertambahnya usia kamu ini,
-kamu menjadi semakin baik, tetap menjadi kebanggaan kedua orang tua kamu,
-semakin didekatkan dengan Allah, selalu dalam lindungan-Nya,
+Makin tueee kamu yaa wkwkw.Doa dari aku, semoga dengan bertambahnya
+usia kamu ini, kamu menjadi semakin baik, tetap menjadi kebanggaan 
+kedua orang tua kamu, semakin didekatkan dengan Allah, selalu dalam lindungan-Nya,
 dan selalu didekatkan sama orang-orang serta teman-teman yang baik.
-Semoga dimudahkan segala macam keinginannya,
-dan semoga cepat segera tercapai semua wishlist-nya.
+Semoga dimudahkan segala macam keinginannya, dan semoga cepat
+segera tercapai semua wishlist-nya.Oh iya, tetap jadi pribadi yang baik,
+ramah, dan juga pengertii yaa naa.Semua doa terbaik aku buat kamuu.
 </p>
-
-<p>
-Oh iya, tetap jadi pribadi yang baik, ramah, dan juga pengertii yaa naa.
-Semua doa terbaik aku buat kamuu.
-</p>
-
 <p>
 Aku tahu di usia-usia sekarang ini kata-kata panjang lebar seperti ini
 mungkin terasa kurang efisien dan kurang ngena ke kitanya,
 karena mungkin kita juga sudah muak dengan berbagai macam basa-basi dari orang-orang.
-</p>
-
-<p>
 Intinya, aku cuma pengen ngucapin selamat dan semangat gaiss.
 Selamat karena sudah bisa sejauh inii,
 dan semangat buat hari-hari besok yang akan datang.
-</p>
-
-<p>
 Aku minta maaf ya kalau misalkan kado dari aku cuma sebatas ucapan ini aja,
 nggak seperti kamu yang penuh effort ngasih kado ke aku.
 Aku sebenarnya sudah lama ada niat,
 cuma akunya aja yang nggak enak.
 </p>
+
 <p>
 Kadonya nanti cek Spay kamu yaaa...
 </p>
@@ -118,7 +135,7 @@ Kadonya nanti cek Spay kamu yaaa...
         <img src="assets/foto3.jpg">
       </div>
 
-      <div class="polaroid" onclick="openModal('assets/foto3.jpg','Lucu lucu semua gaiss.')">
+      <div class="polaroid" onclick="openModal('assets/foto4.jpg','Lucu lucu semua gaiss.')">
         <img src="assets/foto4.jpg">
       </div>
 
@@ -139,6 +156,15 @@ Kadonya nanti cek Spay kamu yaaa...
       </div>
     </div>
   </section>
+
+  <section class="closing-section">
+  <div class="closing-container">
+    <p class="closing-date">— 25 Februari 2026 —</p>
+    <p class="closing-text">
+      Happy Birthday ENAAAA 🎉
+    </p>
+  </div>
+</section>
 
   <!-- MODAL -->
   <div id="modal" class="modal">
