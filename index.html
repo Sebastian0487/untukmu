@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untukmu</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+
+  <!-- SECTION 1 HERO -->
+  <section class="hero">
+    <img src="assets/hero.jpg" class="hero-img">
+    <div class="hero-overlay">
+      <h1>Selamat Ulang Tahun</h1>
+      <p>Untukmu yang selalu pantas dirayakan</p>
+      <div class="scroll-down">⌄</div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 MESSAGE -->
+  <section class="message-section reveal">
+    <div class="message-container">
+      <div class="elegant-divider"></div>
+      <h2>Hari yang Spesial</h2>
+      <div class="elegant-divider"></div>
+   <p>
+Hallo enaa, nggak kerasa sekarang udah tanggal 25 Februari lagi.
+Tepat di tanggal ini berarti kamu sudah masuk usia 23 tahun yaa.
+Makin tueee kamu yaa wkwkw.
+</p>
+
+<p>
+Doa dari aku, semoga dengan bertambahnya usia kamu ini,
+kamu menjadi semakin baik, tetap menjadi kebanggaan kedua orang tua kamu,
+semakin didekatkan dengan Allah, selalu dalam lindungan-Nya,
+dan selalu didekatkan sama orang-orang serta teman-teman yang baik.
+Semoga dimudahkan segala macam keinginannya,
+dan semoga cepat segera tercapai semua wishlist-nya.
+</p>
+
+<p>
+Oh iya, tetap jadi pribadi yang baik, ramah, dan juga pengertii yaa naa.
+Semua doa terbaik aku buat kamuu.
+</p>
+
+<p>
+Aku tahu di usia-usia sekarang ini kata-kata panjang lebar seperti ini
+mungkin terasa kurang efisien dan kurang ngena ke kitanya,
+karena mungkin kita juga sudah muak dengan berbagai macam basa-basi dari orang-orang.
+</p>
+
+<p>
+Intinya, aku cuma pengen ngucapin selamat dan semangat gaiss.
+Selamat karena sudah bisa sejauh inii,
+dan semangat buat hari-hari besok yang akan datang.
+</p>
+
+<p>
+Aku minta maaf ya kalau misalkan kado dari aku cuma sebatas ucapan ini aja,
+nggak seperti kamu yang penuh effort ngasih kado ke aku.
+Aku sebenarnya sudah lama ada niat,
+cuma akunya aja yang nggak enak.
+</p>
+<p>
+Kadonya nanti cek Spay kamu yaaa...
+</p>
+
+      <div class="elegant-divider"></div>
+      <h2>" HAPPY BIRTHDAY DINA FEBRIANIII "</h2>
+      <div class="elegant-divider"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 Cake -->
+  <section class="cake-section">
+  <div class="cake-container">
+    <h2>Make a Wish 🎂</h2>
+    <lottie-player
+  src="assets/teksbirthday.json"
+  background="transparent"
+  speed="1"
+  style="width: 300px; height: 300px;"
+  autoplay
+  loop>
+</lottie-player>
+    <!-- Lottie animation -->
+   <lottie-player
+  src="assets/cake.json"
+  background="transparent"
+  speed="1"
+  style="width: 300px; height: 300px;"
+  autoplay
+  loop>
+</lottie-player>
+
+    <p>Semoga semua yang kamu harapkan, satu per satu menjadi nyata.</p>
+  </div>
+</section>
+
+  <!-- SECTION 4 GALLERY -->
+  <section class="gallery-section">
+    <h2>Gallery</h2>
+
+    <div class="gallery">
+      <div class="polaroid" onclick="openModal('assets/foto1.jpg','Mie-Mie apa yang paling enak naa?.')">
+        <img src="assets/foto1.jpg">
+      </div>
+
+      <div class="polaroid" onclick="openModal('assets/foto2.jpg','semuanya yg didepan itu manis gasiee?.')">
+        <img src="assets/foto2.jpg">
+      </div>
+
+      <div class="polaroid" onclick="openModal('assets/foto3.jpg','Siapa yg beli lego tapi gapernah dirakit?.')">
+        <img src="assets/foto3.jpg">
+      </div>
+
+      <div class="polaroid" onclick="openModal('assets/foto3.jpg','Lucu lucu semua gaiss.')">
+        <img src="assets/foto4.jpg">
+      </div>
+
+      <div class="polaroid" onclick="openModal('assets/foto5.jpg','cung yang suka sama sushi teiii.')">
+        <img src="assets/foto5.jpg">
+      </div>
+      
+      <div class="polaroid" onclick="openModal('assets/foto6.jpg','sutt ini Sushi yang ada haram haramnya gasi.')">
+        <img src="assets/foto6.jpg">
+      </div>
+
+      <div class="polaroid" onclick="openModal('assets/hero.jpg','pertama kali naik kereta buat sayaa,makasi yaa.')">
+        <img src="assets/hero.jpg">
+      </div>
+
+      <div class="polaroid" onclick="openModal('assets/foto8.jpg','............................................')">
+        <img src="assets/foto8.jpg">
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="modal-img">
+    <p id="modal-desc"></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+</body>
+</html>
